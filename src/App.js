@@ -2,9 +2,11 @@ import './App.css';
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
 import Coins from "./Components/Coins/Coins";
+import Coin from "./Routes/Coin";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -23,7 +25,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Coins coins={coins}/>
+      <Routes>
+        <Route path="/" element={<Coins coins={coins}/>} />
+        <Route path="/coin" element={<Coin />}>
+          <Route path=":id" element={<Coin/>} />
+        </Route>
+      </Routes>
     </div>
   );
 }
