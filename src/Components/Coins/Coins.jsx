@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Coins.css";
 import CoinItem from "../CoinItem/CoinItem";
 
 export default function Coins({coins}) {
