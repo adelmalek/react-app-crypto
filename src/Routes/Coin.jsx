@@ -35,9 +35,9 @@ export default function Coin() {
               <p>{coin.name}</p>
               <p>{coin.symbol}</p>
             </div>
-          </div>
-          <div className="coin-price">
-            {coin.market_data? <h1>{coin.market_data.current_price.usd}</h1> : null}
+            <div className="coin-price">
+              {coin.market_data? <h1>{coin.market_data.current_price.usd}</h1> : null}
+            </div>
           </div>
         </div>
 
@@ -55,12 +55,24 @@ export default function Coin() {
             </thead>
             <tbody>
               <tr>
-                {coin.market_data?.price_change_percentage_1h_in_curreny ? <td>{coin.market_data.price_change_percentage_1h_in_curreny.usd}</td> : null}
-                {coin.market_data?.price_change_percentage_24h_in_curreny? <td>{coin.market_data.price_change_percentage_24h_in_curreny.usd}</td> : null}
-                {coin.market_data?.price_change_percentage_1d_in_curreny? <td>{coin.market_data.price_change_percentage_1d_in_curreny.usd}</td> : null}
-                {coin.market_data?.price_change_percentage_7d_in_curreny? <td>{coin.market_data.price_change_percentage_7d_in_curreny.usd}</td> : null}
-                {coin.market_data?.price_change_percentage_30d_in_curreny? <td>{coin.market_data.price_change_percentage_30d_in_curreny.usd}</td> : null}
-                {coin.market_data?.price_change_percentage_1y_in_curreny? <td>{coin.market_data.price_change_percentage_1y_in_curreny.usd}</td> : null}
+                {coin.market_data?.price_change_percentage_1h_in_currency ? 
+                  <td>{coin.market_data.price_change_percentage_1h_in_currency.usd}</td> : null
+                }
+                {coin.market_data?.price_change_percentage_24h_in_currency? 
+                  <td>{coin.market_data.price_change_percentage_24h_in_currency.usd}</td> : null
+                }
+                {coin.market_data?.price_change_percentage_7d_in_currency? 
+                  <td>{coin.market_data.price_change_percentage_7d_in_currency.usd}</td> : null
+                }
+                {coin.market_data?.price_change_percentage_14d_in_currency? 
+                  <td>{coin.market_data.price_change_percentage_14d_in_currency.usd}</td> : null
+                }
+                {coin.market_data?.price_change_percentage_30d_in_currency? 
+                  <td>{coin.market_data.price_change_percentage_30d_in_currency.usd}</td> : null
+                }
+                {coin.market_data?.price_change_percentage_1y_in_currency? 
+                  <td>{coin.market_data.price_change_percentage_1y_in_currency.usd}</td> : null
+                }
               </tr>
             </tbody>
           </table>
