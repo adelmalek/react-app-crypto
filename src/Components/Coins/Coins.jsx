@@ -19,8 +19,8 @@ export default function Coins({coins}) {
             
             {coins.map(coin => {
               return (
-                <Link to={`coin/${coin.id}`} element={<Coin />}>
-                  <CoinItem coin={coin} key={coin.id} />
+                <Link to={`coin/${coin.id}`} element={<Coin />} key={coin.id}>
+                  <CoinItem coin={coin} />
                 </Link>
               )
             })}

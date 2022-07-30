@@ -17,7 +17,6 @@ function App() {
     axios.get(url)
       .then(res => {
         setCoins(res.data)
-        console.log(res.data[0])
       })
       .catch(error => console.log(error))
   }, [])
