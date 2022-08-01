@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import "./Coin.css";
@@ -113,6 +113,12 @@ export default function Coin() {
               __html: DOMPurify.sanitize(coin.description? coin.description.en : "")}}>
             </p>
           </div>
+        </div>
+
+        <div className="content">
+          <Link to="/">
+            <button className="back-btn">Back</button>
+          </Link>
         </div>
 
       </div>
