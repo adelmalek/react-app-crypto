@@ -33,10 +33,10 @@ export default function Coin() {
             <div className="coin-heading">
               {coin.image ? <img src={coin.image.small} alt=""/> : null}
               <p>{coin.name}</p>
-              <p>{coin.symbol}</p>
+              {coin.symbol? <p>{coin.symbol.toUpperCase()}/USD</p> : null}
             </div>
             <div className="coin-price">
-              {coin.market_data? <h1>{coin.market_data.current_price.usd}</h1> : null}
+              {coin.market_data? <h1>${coin.market_data.current_price.usd.toLocaleString()}</h1> : null}
             </div>
           </div>
         </div>
@@ -56,22 +56,22 @@ export default function Coin() {
             <tbody>
               <tr>
                 {coin.market_data?.price_change_percentage_1h_in_currency ? 
-                  <td>{coin.market_data.price_change_percentage_1h_in_currency.usd}</td> : null
+                  <td>{coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(2)}%</td> : null
                 }
                 {coin.market_data?.price_change_percentage_24h_in_currency? 
-                  <td>{coin.market_data.price_change_percentage_24h_in_currency.usd}</td> : null
+                  <td>{coin.market_data.price_change_percentage_24h_in_currency.usd.toFixed(1)}%</td> : null
                 }
                 {coin.market_data?.price_change_percentage_7d_in_currency? 
-                  <td>{coin.market_data.price_change_percentage_7d_in_currency.usd}</td> : null
+                  <td>{coin.market_data.price_change_percentage_7d_in_currency.usd.toFixed(1)}%</td> : null
                 }
                 {coin.market_data?.price_change_percentage_14d_in_currency? 
-                  <td>{coin.market_data.price_change_percentage_14d_in_currency.usd}</td> : null
+                  <td>{coin.market_data.price_change_percentage_14d_in_currency.usd.toFixed(1)}%</td> : null
                 }
                 {coin.market_data?.price_change_percentage_30d_in_currency? 
-                  <td>{coin.market_data.price_change_percentage_30d_in_currency.usd}</td> : null
+                  <td>{coin.market_data.price_change_percentage_30d_in_currency.usd.toFixed(1)}%</td> : null
                 }
                 {coin.market_data?.price_change_percentage_1y_in_currency? 
-                  <td>{coin.market_data.price_change_percentage_1y_in_currency.usd}</td> : null
+                  <td>{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)}%</td> : null
                 }
               </tr>
             </tbody>
@@ -84,18 +84,18 @@ export default function Coin() {
             <div className="left">
               <div className="row">
                 <h1>24 Hour Low</h1>
-                {coin.market_data? <p>{coin.market_data.low_24h.usd}</p> : null}
+                {coin.market_data? <p>${coin.market_data.low_24h.usd.toLocaleString()}</p> : null}
               </div>
               <div className="row">
                 <h1>24 Hour High</h1>
-                {coin.market_data? <p>{coin.market_data.high_24h.usd}</p> : null}
+                {coin.market_data? <p>${coin.market_data.high_24h.usd.toLocaleString()}</p> : null}
               </div>
             </div>
 
             <div className="right">
               <div className="row">
                 <h1>Market Cap</h1>
-                {coin.market_data? <p>{coin.market_data.market_cap.usd}</p> : null}
+                {coin.market_data? <p>${coin.market_data.market_cap.usd.toLocaleString()}</p> : null}
               </div>
               <div className="row">
                 <h1>Circulating Supply</h1>
